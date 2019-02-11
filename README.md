@@ -2,4 +2,4 @@
 
 Written by Xeron
 
-copywrite by Afsar & sons pipeshop
+copyright by Afsar & sons pipeshop
