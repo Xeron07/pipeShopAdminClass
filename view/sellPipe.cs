@@ -28,7 +28,7 @@ namespace view
             discountField.Hide();
            
             AddCombo1Data();
-            AddCombo2Data();
+           // AddCombo2Data();
         }
 
         //properties
@@ -90,7 +90,7 @@ namespace view
 
         private void proceedButton_Click(object sender, EventArgs e)
         {
-           
+            this.Cursor = Cursors.WaitCursor;
              if (String.IsNullOrEmpty(textBox1.Text) || String.IsNullOrEmpty(cEmail.Text) || String.IsNullOrEmpty(phoneNumber.Text) || String.IsNullOrEmpty(paidAmount.Text) || quantityField.Text.Equals("0"))
             {
 
@@ -132,10 +132,13 @@ namespace view
                     };
 
                     new PdfMaker().createPdf(billNo, data);
+                    this.Cursor = Cursors.Default;
                     mailSender(data, billNo);
                 }
             }
-                    
+
+             this.Cursor = Cursors.Default;
+
         }
 
         private void checkQuantity(object sender, EventArgs e)
@@ -270,14 +273,17 @@ namespace view
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
                 mail.From = new MailAddress("anspipeshop@gmail.com");
-                mail.To.Add("ans2k19.a@hotmail.com");
+                mail.To.Add(new MailAddress("ans2k19.a@hotmail.com"));
                 mail.Subject = "Sells Bill No:" + billNo;
                 mail.Body = "\nSold By: " + data.UserName + " \n\n\nCustomer Name:   " + data.CustomerName +"\nCustomer Email: "+data.CustomerEmail+"\nCustomer PhoneNumber: "+data.CustomerPhoneNumber+ "\n\nPipe Name:    " + data.PipeName +"\nPipe Size:   " + data.PipeSize + "\nQuantity:   " + data.Quantity + "\n\nTotal Price:  " + data.TotalPrice+"\n\nPaid Amount: "+data.paidAmount+"\n\nDue Amount: "+data.DueAmount+"\n\nDiscount: "+discountField.Text;
 
-                SmtpServer.Port = 587;
+                //anspipeshop@gmail.com", "tonmoydotzone$$$"
+
+                SmtpServer.Port =587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("anspipeshop@gmail.com", "tonmoydotzone$$$");
                 SmtpServer.EnableSsl = true;
-
+                SmtpServer.UseDefaultCredentials = false;
+                SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
                 SmtpServer.Send(mail);
                 //MessageBox.Show("mail Send");
                 notifyIcon1.ShowBalloonTip(1000, "Sending Sell Report As Mail", "Mail has been send to admin", ToolTipIcon.Info);
@@ -285,12 +291,14 @@ namespace view
             catch (Exception ex)
             {
                 //  MessageBox.Show(ex.ToString());
-                MessageBox.Show("Check Your internet connection");
+               // notifyIcon1.ShowBalloonTip(1000, "Sending Sell Mail failed", ex.ToString(), ToolTipIcon.Info);
+              //  MessageBox.Show(""+ex);
             }
         }
 
         private void changePipeSize(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             this.sgd.getSizes(comboBox1.Text);
             comboBox2.Items.Clear();
             int x = this.sgd.PipeSizes.Count;
@@ -298,6 +306,8 @@ namespace view
             {
                 comboBox2.Items.Add(this.sgd.PipeSizes[i]);
             }
+
+            this.Cursor = Cursors.Default;
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)

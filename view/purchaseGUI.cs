@@ -18,6 +18,7 @@ namespace view
         purcahseDataAdder pda=null;
         AddExpense ae;
         Alert alert = null;
+         sellGEtData sgd = null;
         bool psize=false;
         bool pname=false;
         bool shouldReport = false;
@@ -25,6 +26,7 @@ namespace view
         public purchaseGUI()
         {
             InitializeComponent();
+            this.sgd=new sellGEtData();
             this.st = new StockInfo();
             this.pda = new purcahseDataAdder();
             alert = new Alert();
@@ -95,6 +97,7 @@ namespace view
 
         private void nameChange(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             if(pipename.Text.Equals("--new--"))
             {
                 pname = true;
@@ -106,7 +109,18 @@ namespace view
             else
             {
                 pName.Text = pipename.Text;
+                this.sgd.getSizes(pipename.Text);
+                pipesize.Items.Clear();
+                int x = this.sgd.PipeSizes.Count;
+                for (int i = 0; i < x; i++)
+                {
+                    pipesize.Items.Add(this.sgd.PipeSizes[i]);
+                }
+
+                pipesize.Items.Add("--new--");
             }
+
+            this.Cursor = Cursors.Default;
         }
 
         private void sizeChanged(object sender, EventArgs e)
@@ -353,7 +367,7 @@ namespace view
             catch (Exception ex)
             {
                 //  MessageBox.Show(ex.ToString());
-                MessageBox.Show("Check Your internet connection");
+               // notifyIcon1.ShowBalloonTip(1000, "Sending Purchase report Mail failed", ex.ToString(), ToolTipIcon.Info);
             }
         }
     }

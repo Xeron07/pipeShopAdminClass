@@ -63,21 +63,7 @@ namespace DAL
                     this.PipeName.Add(reader["pipe_name"].ToString());  
                     
                 }
-                cmd = new MySqlCommand("SELECT DISTINCT pipe_size FROM `stock`", this.conn.Connection);
-                MySqlDataReader xreader = cmd.ExecuteReader();
-                while (xreader.Read())
-                {
-                    this.PipeSize.Add(xreader["pipe_size"].ToString());
-                   
-                }
-                cmd = new MySqlCommand(this.sql, this.conn.Connection);
-                MySqlDataReader yreader = cmd.ExecuteReader();
-
-                while (yreader.Read())
-                {
-                    this.PricePerUnit.Add(yreader["price_per_unit"].ToString());
-                    this.Quantity.Add(yreader["quantity"].ToString());
-                }
+                
                 this.conn.closeConnection();
                 return true;
             }
