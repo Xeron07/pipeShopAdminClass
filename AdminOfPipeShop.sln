@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "BAL\BAL.csproj", "{0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{55D1AD99-70C5-499C-8686-BEE9244C7450}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{E265966A-089B-4D98-9BAD-93F054A37114}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupManager", "SetupManager\SetupManager.vdproj", "{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,16 +85,16 @@ Global
 		{55D1AD99-70C5-499C-8686-BEE9244C7450}.Release|x64.Build.0 = Release|Any CPU
 		{55D1AD99-70C5-499C-8686-BEE9244C7450}.Release|x86.ActiveCfg = Release|Any CPU
 		{55D1AD99-70C5-499C-8686-BEE9244C7450}.Release|x86.Build.0 = Release|Any CPU
-		{E265966A-089B-4D98-9BAD-93F054A37114}.Debug|Any CPU.ActiveCfg = Debug
-		{E265966A-089B-4D98-9BAD-93F054A37114}.Debug|ARM.ActiveCfg = Debug
-		{E265966A-089B-4D98-9BAD-93F054A37114}.Debug|ARM64.ActiveCfg = Debug
-		{E265966A-089B-4D98-9BAD-93F054A37114}.Debug|x64.ActiveCfg = Debug
-		{E265966A-089B-4D98-9BAD-93F054A37114}.Debug|x86.ActiveCfg = Debug
-		{E265966A-089B-4D98-9BAD-93F054A37114}.Release|Any CPU.ActiveCfg = Release
-		{E265966A-089B-4D98-9BAD-93F054A37114}.Release|ARM.ActiveCfg = Release
-		{E265966A-089B-4D98-9BAD-93F054A37114}.Release|ARM64.ActiveCfg = Release
-		{E265966A-089B-4D98-9BAD-93F054A37114}.Release|x64.ActiveCfg = Release
-		{E265966A-089B-4D98-9BAD-93F054A37114}.Release|x86.ActiveCfg = Release
+		{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}.Debug|Any CPU.ActiveCfg = Debug
+		{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}.Debug|ARM.ActiveCfg = Debug
+		{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}.Debug|ARM64.ActiveCfg = Debug
+		{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}.Debug|x64.ActiveCfg = Debug
+		{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}.Debug|x86.ActiveCfg = Debug
+		{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}.Release|Any CPU.ActiveCfg = Release
+		{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}.Release|ARM.ActiveCfg = Release
+		{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}.Release|ARM64.ActiveCfg = Release
+		{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}.Release|x64.ActiveCfg = Release
+		{6B6155F7-B9CD-4D4B-93D7-EF1C5374D7DB}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

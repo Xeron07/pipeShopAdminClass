@@ -22,7 +22,7 @@ namespace view.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace view.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("view.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace view.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,10 +63,31 @@ namespace view.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loading1 {
+        public static System.Drawing.Bitmap loading1 {
             get {
                 object obj = ResourceManager.GetObject("loading1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE&gt;
+        ///&lt;html&gt;
+        ///    &lt;!-- Latest compiled and minified CSS --&gt;
+        ///&lt;link rel=&apos;stylesheet&apos; href=&apos;https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css&apos;&gt;
+        ///
+        ///&lt;!-- jQuery library --&gt;
+        ///&lt;script src=&apos;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&apos;&gt;&lt;/script&gt;
+        ///
+        ///&lt;!-- Popper JS --&gt;
+        ///&lt;script src=&apos;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js&apos;&gt;&lt;/script&gt;
+        ///
+        ///&lt;!-- Latest compiled JavaScript --&gt;
+        ///&lt;script src=&apos;https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string mailSenderText {
+            get {
+                return ResourceManager.GetString("mailSenderText", resourceCulture);
             }
         }
     }

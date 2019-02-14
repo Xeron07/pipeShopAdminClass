@@ -12,9 +12,11 @@ namespace view
 {
     public partial class loading : Form
     {
-        public loading()
+        public loading(string name)
         {
+            
             InitializeComponent();
+            label2.Text = name+"!!!";
         }
     }
 }

@@ -273,17 +273,17 @@ namespace view
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
                 mail.From = new MailAddress("anspipeshop@gmail.com");
-                mail.To.Add(new MailAddress("ans2k19.a@hotmail.com"));
+                mail.To.Add("ans2k19.a@hotmail.com");
                 mail.Subject = "Sells Bill No:" + billNo;
-                mail.Body = "\nSold By: " + data.UserName + " \n\n\nCustomer Name:   " + data.CustomerName +"\nCustomer Email: "+data.CustomerEmail+"\nCustomer PhoneNumber: "+data.CustomerPhoneNumber+ "\n\nPipe Name:    " + data.PipeName +"\nPipe Size:   " + data.PipeSize + "\nQuantity:   " + data.Quantity + "\n\nTotal Price:  " + data.TotalPrice+"\n\nPaid Amount: "+data.paidAmount+"\n\nDue Amount: "+data.DueAmount+"\n\nDiscount: "+discountField.Text;
+                mail.Body = "\nSold By: " + data.UserName + " \n\n\nCustomer Name:   " + data.CustomerName +"\nCustomer Email: "+data.CustomerEmail+"\nCustomer PhoneNumber: "+data.CustomerPhoneNumber+ "\n\nPipe Name:    " + data.PipeName +"\nPipe Size:   " + data.PipeSize + "\nQuantity:   " + data.Quantity + "\n\nTotal Price:  " + data.TotalPrice+"\n\nPaid Amount: "+data.PaidAmount+"\n\nDue Amount: "+data.DueAmount+"\n\nDiscount: "+discountField.Text;
 
                 //anspipeshop@gmail.com", "tonmoydotzone$$$"
 
-                SmtpServer.Port =587;
+
+                SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("anspipeshop@gmail.com", "tonmoydotzone$$$");
                 SmtpServer.EnableSsl = true;
-                SmtpServer.UseDefaultCredentials = false;
-                SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
+
                 SmtpServer.Send(mail);
                 //MessageBox.Show("mail Send");
                 notifyIcon1.ShowBalloonTip(1000, "Sending Sell Report As Mail", "Mail has been send to admin", ToolTipIcon.Info);

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE>
+<html>
+    <!-- Latest compiled and minified CSS -->
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'>
+
+<!-- jQuery library -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+<!-- Popper JS -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js'></script>
+
+<!-- Latest compiled JavaScript -->
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script>
+    
+    
+    
+    
+    <body>
+        <h1 style='align-content: center;color:darkslategrey'><u>Welcome To Afsar & Sons Pipe Shop Family</u></h1>
+        <hr/>
+        
+        <h3>You are now a member of Afsar & sons Pipe Shop family. Hope you will do your best to achieve better future for your and for this company.      </h3>
+        <br/>
+        <h3>You can now access the pipe shop software with a valid email account and password. This software will help you to do the basic stuffs in the company. </h3>
+        <br/>
+        <h3>Hope for the best..............</h3><br/><br/>
+        <p style='color: cadetblue'>Your Email address: </p>
+        <p style='color: dimgrey'>Your current password: </p>
+        
+        <br/>
+        <br/>
+        
+        <h2>Regards,</h2>
+        <h2>Admin</h2>
+        <h2><i><u>Afsar & Sons Pipe Shop</u></i></h2>
+        
+        <hr/>
+        
+        <h4 style='color: darkred'> Do not reply to this mail......</h4>
+        
+    </body>
+
+</html>

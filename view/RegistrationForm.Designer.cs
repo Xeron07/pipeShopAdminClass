@@ -122,6 +122,9 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Employee",
+            "Admin"});
             this.comboBox1.Location = new System.Drawing.Point(328, 120);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
@@ -165,6 +168,7 @@
             this.textBox4.Location = new System.Drawing.Point(28, 258);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
+            this.textBox4.PasswordChar = '*';
             this.textBox4.Size = new System.Drawing.Size(217, 33);
             this.textBox4.TabIndex = 7;
             // 
@@ -173,6 +177,7 @@
             this.textBox3.Location = new System.Drawing.Point(28, 189);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(217, 33);
             this.textBox3.TabIndex = 6;
             // 
