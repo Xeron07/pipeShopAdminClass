@@ -52,13 +52,19 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.expense1 = new pipeshop.Expense();
             this.sellReport1 = new view.sellReport();
             this.sellPipe1 = new view.sellPipe();
             this.purchaseGUI2 = new view.purchaseGUI();
             this.transectionReport1 = new view.transectionReport();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -104,11 +110,11 @@
             // 
             this.label2.Font = new System.Drawing.Font("Segoe Script", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(571, 5);
+            this.label2.Location = new System.Drawing.Point(590, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 20);
+            this.label2.Size = new System.Drawing.Size(71, 20);
             this.label2.TabIndex = 5;
-            this.label2.Text = "v1.0.1";
+            this.label2.Text = "v1.2.11";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button3
@@ -160,12 +166,13 @@
             // 
             // label3
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
             this.label3.Font = new System.Drawing.Font("Sitka Text", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 41);
+            this.label3.Size = new System.Drawing.Size(42, 18);
             this.label3.TabIndex = 11;
             this.label3.Text = "label3";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,6 +180,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.logoutButton);
             this.panel2.Controls.Add(this.regButton);
@@ -194,11 +203,15 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 41);
+            this.panel5.Size = new System.Drawing.Size(200, 50);
             this.panel5.TabIndex = 11;
             // 
             // logoutButton
@@ -255,7 +268,7 @@
             this.expenseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.expenseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expenseButton.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.expenseButton.Location = new System.Drawing.Point(0, 346);
+            this.expenseButton.Location = new System.Drawing.Point(0, 274);
             this.expenseButton.Name = "expenseButton";
             this.expenseButton.Size = new System.Drawing.Size(200, 30);
             this.expenseButton.TabIndex = 7;
@@ -300,7 +313,7 @@
             this.transectionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transectionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.transectionButton.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.transectionButton.Location = new System.Drawing.Point(0, 274);
+            this.transectionButton.Location = new System.Drawing.Point(0, 346);
             this.transectionButton.Name = "transectionButton";
             this.transectionButton.Size = new System.Drawing.Size(200, 30);
             this.transectionButton.TabIndex = 4;
@@ -341,11 +354,11 @@
             // uname
             // 
             this.uname.AutoSize = true;
-            this.uname.Font = new System.Drawing.Font("Viner Hand ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uname.Font = new System.Drawing.Font("Monotype Corsiva", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uname.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.uname.Location = new System.Drawing.Point(71, 150);
+            this.uname.Location = new System.Drawing.Point(75, 149);
             this.uname.Name = "uname";
-            this.uname.Size = new System.Drawing.Size(46, 18);
+            this.uname.Size = new System.Drawing.Size(39, 15);
             this.uname.TabIndex = 1;
             this.uname.Text = "label2";
             // 
@@ -381,6 +394,78 @@
             this.panel3.Size = new System.Drawing.Size(800, 670);
             this.panel3.TabIndex = 8;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(129)))), ((int)(((byte)(122)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(42, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(10, 50);
+            this.panel6.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Sitka Text", 9F, System.Drawing.FontStyle.Italic);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(52, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 18);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "label4";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(52, 18);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(148, 10);
+            this.panel7.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Sitka Text", 9F, System.Drawing.FontStyle.Italic);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(52, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(148, 18);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "label5";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(39)))), ((int)(((byte)(46)))));
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 50);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(200, 10);
+            this.panel8.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Monotype Corsiva", 9.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label6.Location = new System.Drawing.Point(3, 149);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 15);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "User Name: ";
             // 
             // expense1
             // 
@@ -437,15 +522,6 @@
             this.transectionReport1.Size = new System.Drawing.Size(800, 670);
             this.transectionReport1.TabIndex = 1;
             // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // UserField
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,6 +540,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -503,5 +580,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label6;
     }
 }

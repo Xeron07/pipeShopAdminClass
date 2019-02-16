@@ -18,6 +18,7 @@ namespace view
         purcahseDataAdder pda=null;
         AddExpense ae;
         Alert alert = null;
+         sellGEtData sgd = null;
         bool psize=false;
         bool pname=false;
         bool shouldReport = false;
@@ -25,6 +26,7 @@ namespace view
         public purchaseGUI()
         {
             InitializeComponent();
+            this.sgd=new sellGEtData();
             this.st = new StockInfo();
             this.pda = new purcahseDataAdder();
             alert = new Alert();
@@ -95,6 +97,7 @@ namespace view
 
         private void nameChange(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             if(pipename.Text.Equals("--new--"))
             {
                 pname = true;
@@ -106,7 +109,18 @@ namespace view
             else
             {
                 pName.Text = pipename.Text;
+                this.sgd.getSizes(pipename.Text);
+                pipesize.Items.Clear();
+                int x = this.sgd.PipeSizes.Count;
+                for (int i = 0; i < x; i++)
+                {
+                    pipesize.Items.Add(this.sgd.PipeSizes[i]);
+                }
+
+                pipesize.Items.Add("--new--");
             }
+
+            this.Cursor = Cursors.Default;
         }
 
         private void sizeChanged(object sender, EventArgs e)
@@ -183,14 +197,17 @@ namespace view
 
         private void submit_Click(object sender, EventArgs e)
         {
-            if(this.checkBox1.Checked)
+            this.Cursor = Cursors.WaitCursor;
+            if (this.checkBox1.Checked)
             {
                 if(shouldReport)
                 {
+                    this.Cursor = Cursors.Default;
                     this.alert.Show(alert.Warning,"Report the expense report first");
                 }
                 else
                 {
+                   
                     stockUpdate();
                 }
             }
@@ -230,14 +247,17 @@ namespace view
         {
             if(check(pName.Text))
             {
+                this.Cursor = Cursors.Default;
                 this.alert.Show(this.alert.Warning, "Pipe Name Not Given ");
             }
             else if (check(label21.Text))
             {
+                this.Cursor = Cursors.Default;
                 this.alert.Show(this.alert.Warning, "Pipe Size Not Given ");
             }
             else if (check(label26.Text))
             {
+                this.Cursor = Cursors.Default;
                 this.alert.Show(this.alert.Warning, "Seller Information Not Given ");
             }
             else
@@ -268,17 +288,20 @@ namespace view
 
                         if(this.pda.addToDb(sql2))
                         {
+                            this.Cursor = Cursors.Default;
                             this.alert.Show(alert.Success, "Purchase report done");
                             mailSender(data,billNo);
                         }
                         else
                         {
+                            this.Cursor = Cursors.Default;
                             this.alert.Show(alert.Error, "Transection error\nNet Connection problem");
                         }
 
                     }
                     else
                     {
+                        this.Cursor = Cursors.Default;
                         this.alert.Show(alert.Error, "update error\nNet Connection problem");
                     }
                 }
@@ -295,27 +318,34 @@ namespace view
                             data.Quantity = (quantity + int.Parse(label23.Text)).ToString();
                             sql = String.Format("update stock set quantity={0} where pipe_name='{1}' and pipe_size='{2}'", data.Quantity, data.PipeName, data.PipeSize);
                         }
-                        MessageBox.Show(sql);
+                       // MessageBox.Show(sql);
                         sql2 = sql2 = string.Format("INSERT INTO `transection`(`billNo`,`item_date`, `pipe_name`, `pipe_size`, `quantity`, `amount` ,`paid_amount`,`due_amount`,`done_by`, `status`) VALUES ('{0}','{1}',\'" + data.PipeName + "\',\'" + data.PipeSize + "\'," + data.Quantity + "," + data.TotalPrice + ",{2},{3},'{4}',\'purchase\')", billNo, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), data.TotalPrice, 0, data.UserName);
                         if (this.pda.addToDb(sql))
                         {
                             if (this.pda.addToDb(sql2))
                             {
+                                
+                                mailSender(data, billNo);
+                                this.Cursor = Cursors.Default;
                                 this.alert.Show(alert.Success, "Purchase report done");
+                               
                             }
                             else
                             {
+                                this.Cursor = Cursors.Default;
                                 this.alert.Show(alert.Error, "Transection error\nNet Connection problem");
                             }
 
                         }
                         else
                         {
+                            this.Cursor = Cursors.Default;
                             this.alert.Show(alert.Error, "update error\nNet Connection problem");
                         }
                     }
                     else
                     {
+                        this.Cursor = Cursors.Default;
                         this.alert.Show(alert.Error, "Enter price per unit ");
                     }
                  
@@ -340,7 +370,7 @@ namespace view
                 mail.From = new MailAddress("anspipeshop@gmail.com");
                 mail.To.Add("ans2k19.a@hotmail.com");
                 mail.Subject = "Purchase Bill No:" + billNo;
-                mail.Body = "\nPurchase By: " + data.UserName + " \n\n\nBought From:   " + textBox3.Text + "\n\nPipe Name:    " + data.PipeName + "\nPipe Size:   " + data.PipeSize + "\nQuantity:   " + data.Quantity + "\n\nTotal Price:  " + data.TotalPrice ;
+                mail.Body = "\nPurchase By:   " + data.UserName + " \n\n\nBought From:   " + textBox3.Text + "\n\nPipe Name:    " + data.PipeName + "\nPipe Size:   " + data.PipeSize +"\nQuantity Bought:    "+textBox4.Text+ "\nPresent Quantity:   " + data.Quantity +"\n\nUnit price:    "+textBox5.Text+ "\n\nTotal Price:  " + data.TotalPrice ;
 
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("anspipeshop@gmail.com", "tonmoydotzone$$$");
@@ -353,7 +383,7 @@ namespace view
             catch (Exception ex)
             {
                 //  MessageBox.Show(ex.ToString());
-                MessageBox.Show("Check Your internet connection");
+               // notifyIcon1.ShowBalloonTip(1000, "Sending Purchase report Mail failed", ex.ToString(), ToolTipIcon.Info);
             }
         }
     }

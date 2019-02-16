@@ -33,5 +33,15 @@ namespace BAL
                 return true;
             return false;
         }
+
+        public bool checkUser(string sql)
+        {
+            if (this.conn.checkRow(sql))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

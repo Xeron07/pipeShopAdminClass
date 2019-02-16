@@ -124,14 +124,19 @@ namespace view
 
         private void form_load(object sender, EventArgs e)
         {
+            //, dd MMMM yyyy hh:mm:ss tt
             timer1.Start();
-            label3.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:ss tt");
+            label3.Text = DateTime.Now.ToString("dddd");
+            label4.Text= DateTime.Now.ToString(" dd MMMM yyyy");
+            label5.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Start();
-            label3.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm:ss tt");
+            label3.Text = DateTime.Now.ToString("dddd");
+            label4.Text = DateTime.Now.ToString(" dd MMMM yyyy");
+            label5.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         private void regButton_Click(object sender, EventArgs e)

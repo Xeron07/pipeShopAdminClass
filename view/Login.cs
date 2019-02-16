@@ -87,16 +87,29 @@ namespace view
             lc.Password = this.Password;
             if (lc.logUserIn(ref uname, ref uid, ref status))
             {
-                this.Hide();
-                
-                ld = new loading();
-                this.Uname = uname;
-                timer1.Interval = 1000; // specify interval time as you want
-                timer1.Tick += new EventHandler(timer_Tick);
-                timer1.Start();
-                ld.Show();
-                this.uf = new UserField() { UserName = Uname };
-                //  alert.Show(this.alert.Success, "Login SuccessFul");
+               //if(string.Equals(status, "admin", StringComparison.OrdinalIgnoreCase))
+               // {
+                    this.Hide();
+                    this.Uname = uname;
+                ld = new loading(this.Uname);
+                    ld.Show(); 
+                    timer1.Interval = 1000; // specify interval time as you want
+                    timer1.Tick += new EventHandler(timer_Tick);
+                    timer1.Start();
+                    
+                    this.uf = new UserField() { UserName =  Uname };
+               //     alert.Show(this.alert.Success, "Login SuccessFul ");
+               // }
+               //else
+               //{
+               //     alert.Show(alert.Error, "Only admin can login from this software");
+               //     loginButton.Show();
+               //     loadingImg.Hide();
+               //     labelCheck.Hide();
+
+
+               // }
+
 
             }
             else

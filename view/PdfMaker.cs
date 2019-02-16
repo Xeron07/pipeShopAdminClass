@@ -194,7 +194,7 @@ namespace view
 
           XStringFormats.TopLeft);
 
-            gfx.DrawString(data[12], fontData, XBrushes.Black,
+            gfx.DrawString(data[12], fontData, XBrushes.Red,
 
           new XRect(340, 250, page.Width, 120),
 
@@ -208,7 +208,7 @@ namespace view
               XStringFormats.TopLeft);
 
 
-            gfx.DrawLine(line, 30, 274, 180, 274);
+            gfx.DrawLine(line, 30, 284, 170, 284);
 
             gfx.DrawString("Customer Name:", fontData, XBrushes.Black,
 
@@ -236,35 +236,35 @@ namespace view
 
             gfx.DrawString("Email-address:", fontData, XBrushes.Black,
 
-              new XRect(40, 320, page.Width, 190),
+              new XRect(40, 330, page.Width, 190),
 
                XStringFormats.TopLeft);
 
             gfx.DrawString(data[7], fontData, XBrushes.Black,
 
-          new XRect(340, 320, page.Width, 120),
+          new XRect(340, 330, page.Width, 120),
 
            XStringFormats.TopLeft);
-            gfx.DrawString("Amount paid:", fontData, XBrushes.Black,
+            gfx.DrawString("Amount paid:", fontData, XBrushes.Red,
 
-              new XRect(40, 340, page.Width, 195),
+              new XRect(40, 350, page.Width, 195),
 
                XStringFormats.TopLeft);
 
-            gfx.DrawString(data[8], fontData, XBrushes.Black,
+            gfx.DrawString(data[8], fontData, XBrushes.Red,
 
-          new XRect(340, 340, page.Width, 120),
+          new XRect(340, 350, page.Width, 120),
 
            XStringFormats.TopLeft);
-            gfx.DrawString("Due Amount:", fontData, XBrushes.Black,
+            gfx.DrawString("Due Amount:", fontData, XBrushes.Red,
 
-              new XRect(40, 360, page.Width, 180),
+              new XRect(40, 370, page.Width, 180),
 
                XStringFormats.TopLeft);
 
-            gfx.DrawString(data[9], fontData, XBrushes.Black,
+            gfx.DrawString(data[9], fontData, XBrushes.Red,
 
-          new XRect(340, 360, page.Width, 120),
+          new XRect(340, 370, page.Width, 120),
 
            XStringFormats.TopLeft);
 
@@ -279,7 +279,7 @@ namespace view
 
             // Save the document...
 
-            string filename = "Bill_Report.pdf";
+            string filename = "Bill_Report_"+billNo+".pdf";
 
             string path= Directory.GetCurrentDirectory();
             string pdfPath = path + "\\pdfs";
